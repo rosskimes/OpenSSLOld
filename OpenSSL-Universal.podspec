@@ -37,7 +37,14 @@ Pod::Spec.new do |s|
   s.osx.header_dir          = 'openssl'
   s.osx.preserve_paths      = 'lib-macos/libcrypto.a', 'lib-macos/libssl.a'
   s.osx.vendored_libraries  = 'lib-macos/libcrypto.a', 'lib-macos/libssl.a'
-
+  
+  s.tvos.deployment_target = '11.3'
+  s.tvos.source_files        = 'include-tvos/openssl/**/*.h'
+  s.tvos.public_header_files = 'include-tvos/openssl/**/*.h'
+  s.tvos.header_dir          = 'openssl'
+  s.tvos.preserve_paths      = 'lib-tvos/libcrypto.a', 'lib-tvos/libssl.a'
+  s.tvos.vendored_libraries  = 'lib-tvos/libcrypto.a', 'lib-tvos/libssl.a'
+  
   s.libraries = 'ssl', 'crypto'
   s.requires_arc = false
 end
